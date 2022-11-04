@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập buổi 13</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./img/write.png" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- FA6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Bài 1 -->
+    <section id="Exercise1">
+      <div class="container">
+        <div class="cover m-5 p-5">
+          <h2>Bài 1: Tính tiền lương nhân viên</h2>
+          <div class="card mx-5 p-5">
+            <p>Lương 1 ngày: 100.000 VNĐ</p>
+            <input
+              id="days"
+              type="text"
+              class="my-2 form-control"
+              placeholder="Nhập số ngày làm"
+            />
+            <button class="btn btn-success" onclick="calcSalary()">
+              Tính tiền
+            </button>
+            <div id="SalaryResult" class="block_result mt-3">
+              <p class="fs-6">
+                Bạn đã làm được <span id="dayshow" class=""></span> ngày
+              </p>
+              <p class="bg-warning p-3 rounded fs-3">
+                Tiền lương của bạn là: <span id="salary"></span> VNĐ
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bài 2 -->
+
+    <section id="Exercise2">
+      <div class="container">
+        <div class="cover m-5 p-5">
+          <h2>Bài 2: Tính giá trị trung bình</h2>
+          <div class="card mx-5 p-5">
+            <div class="row">
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"
+                    >Số 1</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="number1"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"
+                    >Số 2</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="number2"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"
+                    >Số 3</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="number3"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"
+                    >Số 4</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="number4"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"
+                    >Số 5</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="number5"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div id="AverageBlock" class="result col-6 average_result mt-0">
+                <p>
+                  Giá trị trung bình 5 số bạn đã nhập là:
+                  <span
+                    id="AverageResult"
+                    class="fs-5 fw-bolder text-danger"
+                  ></span>
+                </p>
+              </div>
+              <div class="col-6 ex2_button text-end">
+                <button class="btn btn-success fs-4" onclick="calcAverage()">
+                  <i class="fa-solid fa-equals"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bài 3 -->
+    <section id="Exercise3">
+      <div class="container">
+        <div class="cover m-5 p-5">
+          <h2>Bài 3: Quy đổi tiền USD -> VNĐ</h2>
+          <div class="card mx-5 p-5">
+            <h4>Mệnh giá 1 USD = 23,500 VNĐ</h4>
+            <div class="input-group mb-3">
+              <input
+                id="dollarMoney"
+                type="text"
+                class="form-control"
+                placeholder="Nhập số tiền USD bạn muốn đổi"
+                aria-describedby="button-addon2"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+                onclick="ExchangDollarToVnd()"
+              >
+                Quy đổi
+              </button>
+            </div>
+            <div class="result">
+              <div class="container">
+                <span id="ExchangeResult" class="fs-4 fw-bold text-danger"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bài 4 -->
+    <section id="Exercise4">
+      <div class="container">
+        <div class="cover m-5 p-5">
+          <h2>Bài 4: Tính diện tích và chu vi hình chữ nhật</h2>
+          <div class="card mx-5 p-5">
+           
+            <div class="row">
+              <div class="col-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Chiều dài</span>
+                  <input id="Length" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Chiều rộng</span>
+                  <input id="Width" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="container">
+                  <button class="btn btn-success fw-bold " onclick="perimeterNarea()"><i class="fa-solid fa-equals"></i></button>
+                </div>
+              </div>
+            </div>
+
+
+            <div id="Ex4Result" class="block_result mt-3">
+              <div class="container">
+                <h3>Kết quả: </h3>
+               <div class="row">
+                <div class="col-6">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary bg-gradient text-light" id="inputGroup-sizing-default">Chu vi:</span>
+                    <input id="perimeter" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  
+                </div>
+                <div class="col-6">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-warning bg-gradient text-dark" id="inputGroup-sizing-default">Diện tích:</span>
+                    <input id="area" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  
+                </div>
+               </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bài 5 -->
+    <section id="Exercise5">
+      <div class="container">
+        <div class="cover m-5 p-5">
+          <h2>Bài 5: Tính tổng 2 ký tự số</h2>
+          <div class="card mx-5 p-5">
+            
+            <div class="row">
+              <div class="col-7">
+                <input id="NumberW2" type="text" class="form-control" placeholder="Nhập vào số có 2 ký tự">
+              </div>
+              <div class="col-3">
+                <button class="btn btn-success" onclick="CalcNumW2()"> <i class="fa-solid fa-equals"></i> </button>
+              </div>
+              <div class="col-2">
+                <span class="fs-3 fw-bold text-danger" id="Sum2Result"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HOMEWORK -->
+    <script src="./Homework/ex1.js"></script>
+    <script src="./Homework/ex2.js"></script>
+    <script src="./Homework/ex3.js"></script>
+    <script src="./Homework/ex4.js"></script>
+    <script src="./Homework/ex5.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
